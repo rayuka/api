@@ -23,7 +23,7 @@ $query="CREATE TABLE `$location`(
 
 $oc= mysqli_query($con,$query);
 }
-$sql="INSERT INTO `db1`.`user` ( `id`,`username`, `password`,`name`,`location`,`email`,`mobile .no`) VALUES ('2','$username', '$passWord','$name','$location','$email','$mobile');";
+$sql="INSERT INTO `db1`.`user` ( `id`,`username`, `password`,`name`,`location`,`email`,`mobile`) VALUES ('2','$username', '$passWord','$name','$location','$email','$mobile');";
 $result = mysqli_query($con,$sql); 
 if($result == true) {
     echo '{"query_result":"SUCCESS"}';
