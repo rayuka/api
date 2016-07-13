@@ -1,12 +1,12 @@
 <?php 
 
-$con=mysqli_connect("localhost","root","sati","db1");
+$con=mysqli_connect("localhost","root","","project_db");
 if (mysqli_connect_errno($con))
 {
    echo '{"query_result":"ERROR"}';
 }
 
-$location ="dela";//$_GET['location'];
+$location ="gurgaon";//$_GET['location'];
 $sq="SELECT `username` FROM `db1`.`user` WHERE `location`='$location';";
 $t=mysqli_query($con,$sq);
 if(mysqli_num_rows($t)>0)

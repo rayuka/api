@@ -1,6 +1,6 @@
 <?php 
 
-$con=mysqli_connect("localhost","root","sati","db1");
+$con=mysqli_connect("localhost","root","","project_db");
 if (mysqli_connect_errno($con))
 {
    echo '{"query_result":"ERROR"}';
