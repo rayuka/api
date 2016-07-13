@@ -6,7 +6,7 @@ if (mysqli_connect_errno($con))
 }
 
 $location =$_GET['location'];
-$sq="SELECT `username` FROM `db1`.`user` WHERE `location`='$location';";
+$sq="SELECT `username` FROM `project_db`.`user` WHERE `location`='$location';";
 $t=mysqli_query($con,$sq);
 $level=mysqli_num_rows($t);
 

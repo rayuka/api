@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","sati","db1");
+$con=mysqli_connect("localhost","root","","project_db");
 if (mysqli_connect_errno($con))
 {
    echo '{"query_result":"ERROR"}';
@@ -7,7 +7,7 @@ if (mysqli_connect_errno($con))
  
 $username = $_GET['username'];
 $password = $_GET['password'];
-$sql="SELECT * FROM `db1`.`user` WHERE `username`='$username' AND `password`='$password';";
+$sql="SELECT * FROM `project_db`.`user` WHERE `username`='$username' AND `password`='$password';";
 $result = mysqli_query($con,$sql);
 $i=mysqli_num_rows($result);
 $r=array();

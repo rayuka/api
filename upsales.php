@@ -7,7 +7,7 @@ if (mysqli_connect_errno($con))
  
 $username =$_GET['username'];
 $sale = $_GET['sale'];
-$sq="SELECT `location` FROM `db1`.`user` WHERE `username`='$username';";
+$sq="SELECT `location` FROM `project_db`.`user` WHERE `username`='$username';";
 $res = mysqli_query($con,$sq); 
 $r=array();
 while($row = mysqli_fetch_array($res))
@@ -20,7 +20,7 @@ while($row = mysqli_fetch_array($res))
 $location=$r[0]['location'];
 //echo "$location";
 
-$sql="INSERT INTO `db1`.`$location` (`username`, `sale`) VALUES ('$username', '$sale');";
+$sql="INSERT INTO `project_db`.`$location` (`username`, `sale`) VALUES ('$username', '$sale');";
 
 $result = mysqli_query($con,$sql); 
 

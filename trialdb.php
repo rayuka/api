@@ -7,11 +7,11 @@ if (mysqli_connect_errno($con))
 }
 
 $location ="gurgaon";//$_GET['location'];
-$sq="SELECT `username` FROM `db1`.`user` WHERE `location`='$location';";
+$sq="SELECT * FROM `project_db`.`user` WHERE `location`='$location';";
 $t=mysqli_query($con,$sq);
 if(mysqli_num_rows($t)>0)
 {
-$sql = "select * from `db1`.`$location`;";
+$sql = "select * from `project_db`.`$location`;";
  
 $res = mysqli_query($con,$sql);
 
