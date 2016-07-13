@@ -6,7 +6,8 @@ if (mysqli_connect_errno($con))
    echo '{"query_result":"ERROR"}';
 }
 
-$location ="gurgaon";//$_GET['location'];
+
+$location ="conf";
 $sq="SELECT * FROM `project_db`.`user` WHERE `location`='$location';";
 $t=mysqli_query($con,$sq);
 if(mysqli_num_rows($t)>0)
