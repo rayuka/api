@@ -1,9 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","sati","sati","project_db");
-if (mysqli_connect_errno($con))
-{
-   echo '{"query_result":"ERROR"}';
-}
+require_once('db_connection.php');
  
 $username = $_GET['username'];
 $password = $_GET['password'];
@@ -32,6 +28,3 @@ else{
     echo '{"query_result":"FAILURE"}';
 }
 mysqli_close($con);
-
-
-?>
