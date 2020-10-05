@@ -1,18 +1,12 @@
 <?php
-$con=mysqli_connect("localhost","sati","sati","project_db");
-if (mysqli_connect_errno($con))
-{
-   echo '{"query_result":"ERROR"}';
-}
- 
+require_once('db_connection.php');
+require_once('Response.php');
 $username = $_GET['username'];
-//$sql="INSERT INTO `db1`.`user` (`username`, `password`,`firstname`,`lastname`,`email`,`mobile`) VALUES ('$username', '$passWord','$firstname','$lastname','$email','$mobile');";
-$result = mysqli_query($con,$sql); 
-if($result == true) {
-    echo '{"query_result":"SUCCESS"}';
-}
-else{
-    echo '{"query_result":"FAILURE"}';
+$sql = "select * from user where username=$username";
+$result = mysqli_query($con, $sql);
+if ($result == true) {
+    Response::print_success();
+} else {
+    Response::print_error();
 }
 mysqli_close($con);
-?>
