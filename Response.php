@@ -16,4 +16,14 @@ class Response
     {
         echo json_encode($this);
     }
+
+    public static function print_error()
+    {
+        echo '{"query_result":"FAILURE"}';
+    }
+
+    public static function print_success()
+    {
+        echo '{"query_result":"SUCCESS"}';
+    }
 }

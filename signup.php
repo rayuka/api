@@ -21,9 +21,9 @@ if ($j == 0) {
 $sql = "INSERT INTO `project_db`.`user` ( `id`,`username`, `password`,`name`,`location`,`email`,`mobile`) VALUES ('2','$username', '$passWord','$name','$location','$email','$mobile');";
 $result = mysqli_query($con, $sql);
 if ($result == true) {
-    echo '{"query_result":"SUCCESS"}';
+    Response::print_success();
 } else {
-    echo '{"query_result":"FAILURE"}';
+    Response::print_error();
 }
 mysqli_close($con);
 return;

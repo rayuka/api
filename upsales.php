@@ -20,9 +20,9 @@ $sql = "INSERT INTO `project_db`.`$location` (`username`, `sale`) VALUES ('$user
 $result = mysqli_query($con, $sql);
 
 if ($result) {
-    echo '{"query_result":"SUCCESS"}';
+    Response::print_success();
 } else {
-    echo '{"query_result":"FAILURE"}';
+    Response::print_error();
 }
 mysqli_close($con);
 return;

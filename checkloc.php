@@ -7,6 +7,9 @@ $t = mysqli_query($con, $sq);
 $level = mysqli_num_rows($t);
 
 if ($level > 0)
-	echo '{"query_result":"SUCCESS"}';
-else
-	echo '{"query_result":"SUCCESSFUL"}';
+	Response::print_success();
+else {
+	$res = new Response(true, ['users' => [], 'count' => $level]);
+	$res->print();
+}
+return;

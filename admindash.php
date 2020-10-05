@@ -5,8 +5,8 @@ $username = $_GET['username'];
 $sql = "select * from user where username=$username";
 $result = mysqli_query($con, $sql);
 if ($result == true) {
-    echo '{"query_result":"SUCCESS"}';
+    Response::print_success();
 } else {
-    echo '{"query_result":"FAILURE"}';
+    Response::print_error();
 }
 mysqli_close($con);

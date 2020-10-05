@@ -23,8 +23,7 @@ while ($row = mysqli_fetch_array($res)) {
       )
    );
 }
-
-echo json_encode(array("result" => $result));
-
+$res = new Response(true, $result);
+$res->print();
 mysqli_close($con);
 return;
